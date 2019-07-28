@@ -64,23 +64,32 @@ class App extends Component {
 				)            
 			});
 			return (
-				<table className="table table-hover">
-					<thead>
-						<tr>
-						<th scope="col">Book ID</th>
-						<th scope="col">Title</th>
-						<th scope="col">Authors</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Avg Rating</th>
-                        <th scope="col">Ratings Count</th>
-                        <th scope="col">Language Code</th>
-                        <th scope="col">ISBN</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { booksComponents }
-                    </tbody>
-                </table>
+				<div>
+					<input type="search" 
+						className="form-control"
+						placeholder="Search by Book or Author's Name..." />
+					
+					<div className="table-responsive">
+						<table className="table table-dark table-hover">
+							<thead>
+								<tr>
+									<th scope="col">Book ID</th>
+									<th scope="col">Title</th>
+									<th scope="col">Authors</th>
+									<th scope="col">Price</th>
+									<th scope="col">Rating</th>
+									<th scope="col">Total Ratings</th>
+									<th scope="col">Language Code</th>
+									<th scope="col">ISBN</th>
+									<th scope="col">Checkout</th>
+								</tr>
+							</thead>
+							<tbody>
+								{ booksComponents }
+							</tbody>
+						</table>
+					</div>
+				</div>
             );
         }
     }
