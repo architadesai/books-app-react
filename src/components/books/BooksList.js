@@ -24,7 +24,7 @@ class BooksList extends Component {
                 <td> { this.props.title } </td>
                 <td>{ this.props.authors }</td>
                 <td>{ this.props.price }</td>
-                {/* <td>{ this.props.avgRating }</td> */}
+
                 <td style={{ width: '8%' }}>
                     <StarRatings 
                     rating={ this.props.avgRating }
@@ -34,11 +34,15 @@ class BooksList extends Component {
                     />
                 </td>
                 <td>{ this.props.ratingCount }</td>
-                
+
                 <td>{ this.props.langCode }</td>  
                 <td>{ this.props.isbn }</td>
                 <td> 
-                    <button className="text-center" style={ cartStyle }>
+                    <button 
+                        className="text-center" 
+                        style={ cartStyle }
+                        onClick={ (event) => this.props.checkoutBook(event, this.props.bookID)}
+                    >
                         <i className="fa fa-cart-plus"></i>
                     </button> 
                 </td>
